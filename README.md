@@ -1,3 +1,2 @@
 # rps
-Rock Paper Scissors
-Hello
+Rock Paper Scissors game in javascript console
