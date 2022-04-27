@@ -1,2 +1,3 @@
 # rps
-Rock Paper Scissors javascipt console game
+Rock Paper Scissors game in javascript console
+
