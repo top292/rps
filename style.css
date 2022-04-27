@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+
+}
+
+#selection {
+    display: flex;
+    justify-content: center;
+}
+
+#text {
+    margin-left: 20%;
+}
+
+button {
+    margin: 10px;
+}
