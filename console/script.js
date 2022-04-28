@@ -1,7 +1,3 @@
-// let playerSelection = prompt("what your choice (rock/paper/scissors): ");
-// playerSelection = playerSelection.toLowerCase();
-//   console.log(playRound(playerSelection, computerSelection));
-// console.log(game());
 
 const computerSelection = computerPlay();
 let playerScore = 0;
@@ -33,11 +29,6 @@ function computerPlay() {
 
 //   console.log(rps[Math.floor(Math.random() * 3)]);
 }
-
-function game() {
-
-}
-
 
 
 function game() {
