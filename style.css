@@ -1,17 +1,125 @@
-body {
+html {
+    background: lightgray;
+    font-size: 62.5%;
+  }
+  
+  /*make it all fit to page*/
+  
+  .flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  /*heading*/
+  h1 {
+    color: maroon;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 7.5rem;
+    margin: 2rem;
+  }
+  
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: saddlebrown;
+    margin: 2rem;
+  }
+  
+  h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 4rem;
+    color: brown;
+    margin: 2rem 2rem;
+  }
+  
+  /* buttons */
+  
+  .optionBtn button:hover {
     background-color: lightgray;
-
-}
-
-#selection {
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .optionBtn button {
+    background-color: rosybrown;
+    border: 4px solid darkred;
+    width: 15rem;
+    height: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 3rem;
+  }
+  
+  #reset {
+    width: 12rem;
+    height: 4rem;
+    margin-top: 2rem;
+    background-color: darkred;
+    font-size: 2rem;
+  }
+  
+  /* labels */
+  
+  #playerLabel, #playerPick {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Veranda, sans-serif;
+    color: indigo;
+    padding-left: 1.5rem;
+  }
+  
+  #compLabel, #compPick {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Veranda, sans-serif;
+    color: indigo;
+    padding-left: 1.5rem;
+    padding-right: .3rem;
+  }
+  
+  #resultsLabel {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Veranda, sans-serif;
+    color: indigo;
+  }
+  
+  /*Outputs: playerScore, computerScore, final round results*/
+  
+  .scores, .optionLabels {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .scores div, .optionLabels div {
     display: flex;
     justify-content: center;
-}
-
-#text {
-    margin-left: 20%;
-}
-
-button {
-    margin: 10px;
-}
+    align-items: center;
+    width: 15rem;
+    height: 5rem;
+    border: 5px solid darkred;
+    margin: 0.5rem .5rem 2rem 0;
+    font-weight: bolder;
+    font-size: 2rem;
+  }
+  
+  #roundRestults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 10rem;
+    border: 5px solid darkred;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+  }
+  

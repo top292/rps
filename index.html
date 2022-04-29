@@ -4,20 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+    <script src="script.js" defer charset="utf-8"></script>
 </head>
 <body>
-    <div id="text">
-        <h2>Your choice: <span id="user-choice"></span> </h2>
-        <h2>Computer choice: <span id="computer-choice"></span> </h2>
-        <h2>Result: <span id="result"></span> </h2>
-    </div>
-    <div id="selection">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
+<div class="flex">
+  <h1>Rock Paper Scissors</h1>
+  <h2>Choose your option</h2>
+  <h3>First to 5 scores wins!</h3>
+
+  <div class="optionBtn">
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+  </div>
+
+  <div class="pickLabels">
+    <span id="playerPick">Player choose</span>
+    <span id="compPick">Computer choose</span>
+  </div>
+
+  <div class="optionLabels">
+    <div id="playerOpt"></div>
+    <div id="compOpt"></div>
+  </div>
+
+  <div class="labels">
+    <span id="playerLabel">Player scores</span>
+    <span id="compLabel">Computer scores</span>
+  </div>
+
+  <div class="scores">
+    <div id="playerScore"></div>
+    <div id="computerScore"></div>
+  </div>
+
+  <div>
+    <span id="resultsLabel">Results</span>
+  </div>
+
+  <div id="roundRestults"></div>
+
+  <div>
+    <button id="reset">Play again!</button>
+  </div>
+
+</div>
+
 </body>
 </html>

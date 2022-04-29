@@ -1,31 +1,70 @@
-const userChoiceDisplay = document.getElementById("user-choice")
-const computerChoiceDisplay = document.getElementById("computer-choice")
-const resultDisplay = document.getElementById("result")
-const possibleChoices = document.querySelectorAll("button")
-let userChoice
-let computerChoice
-let result 
+const optionBtn = document.querySelectorAll('div.optionBtn button')
+const playerPoints = document.querySelector('#playerScore')
+const playerOpt = document.querySelector('#playerOpt')
+const compOpt = document.querySelector('#compOpt')
+const computerPoints = document.querySelector('#computerScore')
+const roundRestults = document.querySelector('#roundRestults')
+const resetBtn = document.querySelector('#reset')
+// let playerSelection
+// let computerSelection
+let playerScore = 0
+let compScore = 0
 
-possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
-    userChoice = e.target.id
-    userChoiceDisplay.textContent = userChoice[0].toUpperCase() + userChoice.substring(1)    
-    generateComputerChoice()
-    getResult()
+//reset button to refresh page
+resetBtn.addEventListener('click', () => location.reload())
+
+//player pick
+optionBtn.forEach(option => option.addEventListener('click', (e) => {
+  playerSelection = e.target.id
+  playerOpt.textContent = playerSelection
+  computerPlay()
+  playRound(playerSelection, computerPlay())
 }))
 
-function generateComputerChoice() {
-    const choiceList = ["rock", "paper", "scissors"]
-    computerChoice = choiceList[Math.floor(Math.random() * 3)]
-    computerChoiceDisplay.textContent = computerChoice[0].toUpperCase() + computerChoice.substring(1)
+//computer play
+function computerPlay() {
+  const selectionList = ["rock", "paper", "scissors"];
+  computerSelection = selectionList[Math.floor(Math.random() * selectionList.length)];
+  compOpt.textContent = computerSelection
+  return computerSelection
 }
 
-function getResult() {
-    if (computerChoice === userChoice) {
-        result = "Draw"
-    } else if (computerChoice === "rock" && userChoice === "paper" || computerChoice === "paper" && userChoice === "scissors" || computerChoice === "scissors" && userChoice === "rock") {        
-        result ="You win"         
-    } else {        
-        result = "You lose"        
-    }    
-    resultDisplay.textContent = result   
+//play round
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+      playerPoints.textContent = ++playerScore
+      computerPoints.textContent = ++compScore
+      roundRestults.textContent = "Tie!"
+  } else if (computerSelection === "rock" && playerSelection === "paper" || computerSelection === "paper" && playerSelection === "scissors" || computerSelection === "scissors" && playerSelection ===    "rock") {
+    playerPoints.textContent = ++playerScore
+    roundRestults.textContent = "You win!"
+  } else {
+    computerPoints.textContent = ++compScore
+    roundRestults.textContent = "You lose!"
+  }
+  checkWinner()
+}
+
+//check who get 5 points First
+function checkWinner() {
+  if (compScore === 5 || playerScore === 5) {
+    if (playerScore > compScore) {
+      roundRestults.textContent = "You win"
+      roundRestults.style.color = 'green'
+    } else if (compScore > playerScore) {
+      roundRestults.textContent = "Computer win"
+      roundRestults.style.color = 'red'
+    } else {
+      roundRestults.textContent = "Draw"
+      roundRestults.style.color = 'blue'
+    }
+    endGame()
+  }
+}
+
+//end game function
+function endGame() {
+  document.getElementById('rock').disabled = true
+  document.getElementById('paper').disabled = true
+  document.getElementById('scissors').disabled = true
 }
